@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh - Portfolio</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1>Harsh Portfolio</h1>
+                <ul id="menu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="" onclick="alert('Project will coming soon')">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <span href="" style="color: black;" class="cross" onclick="closemenu()">&#10006;</span>
+                </ul>
+                <span style="color: white;" class="arrow" onclick="openmenu()">☰</span>
+            </nav>
+            <div class="header-text">
+                <h1>Hi I'm <span>Harsh</span><br> passionate in<br>
+                    <span id="autowrite" style="color: yellow;"></span>
+                </h1>
+                <img src="Portofilo1.gif" alt="Portfolio">
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="profile.jpg" alt="Profile">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Us</h1>
+                    <p style="font-size: 16px;">Welcome to my portfolio. I'm delighted to have you here and share a
+                        glimpse of my journey, passions, and accomplishments. My name is Harsh, and I am an aspiring
+                        Web-Development, driven by curiosity and a desire to make a positive impact in the world.</p>
+                    <div class="tab-title">
+                        <p class="tab-links "><a id="activelink1" href="#skills"></a>Skills</p>
+                        <div class="tab-content active-tab" id="skills">
+                            <ul>
+                                <li><span>Web-Development</span><br>HTML,CSS,JAVASCRIPT,REACT,BOOTSTRAP</li>
+                                <li><span>Languages</span><br>JAVA,PYTHON</li>
+                                <li><span>Data Technologies</span><br>DBMS,SQL,EXCEL</li>
+                            </ul>
+                        </div>
+                        <p class="tab-links "><a id="activelink2" href=""></a>Education</p>
+                        <div class="tab-content" id="education">
+                            <ul>
+                                <li><span>Present</span><br>Bachelor of Computer Application(IGNOU)</li>
+                                <li><span>2022</span><br>Web-Development(INTERNSHALLA)</li>
+                                <li><span>2021</span><br>Diploma in Software Engineering(NIIT PVT)</li>
+                                <li><span>2021</span><br>Social Media and marketing</li>
+                            </ul>
+                        </div>
+                        <p class="tab-links "><a id="activelink3" href=""></a>Experience</p>
+                        <div class="tab-content" id="experience">
+                            <ul>
+                                <li>Fresher</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="row2">
+            <div class="contact-col-1">
+                <div class="contactdetail">
+                    <h1>Contact US</h1>
+                    <p>&#128234 harsh.verma2708@gmail.com</p><br>
+                    <div class="contact-logo">
+                        <a href="https://www.linkedin.com/in/harsh-verma-2b25561a2/" class="logos"><img
+                                src="linkedin-logo.png" alt="linkdn"></a>
+                        <a href="https://www.youtube.com/channel/UCDxSGXhZPfFF5XCW0KZG7MA" class="logos2"><img
+                                src="youtube.png" alt="youtube"></a><br>
+                    </div>
+                    <button><a href="HARSH.CV.pdf" download>DOWNLOAD CV</a></button>
+                </div>
+            </div>
+            <div class="contact-col-2">
+                <form method="post" action="connection.php">
+                    <input style="height:2rem ;width:16rem;" type="text" id="name" name="name" required maxlength="30"
+                        placeholder="Name" style="background-color: blue;" autocomplete="off">
+                    <br>
+                    <input style="height:2rem ;width:16rem;" type="email" id="email" name="email" required
+                        placeholder="Email" autocomplete="off">
+                    <br>
+                    <textarea style="background-color:white;color:black;" id="message" name="message" rows="4" cols="25"
+                        required placeholder="Message" autocomplete="off"></textarea>
+                    <br>
+                    <!-- <button type="submit">Submit</button> -->
+                    <input class="button" type="submit" value="Submit">
+                </form>
+                <button><a href="HARSH.CV.pdf" download>DOWNLOAD CV</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const textToWrite = "Web-Development";
+    const speed = 100;
+
+
+    let index = 0;
+    const container = document.getElementById('autowrite');
+
+    function autoWrite() {
+        container.innerText += textToWrite.charAt(index);
+        index++;
+
+        if (index < textToWrite.length) {
+            setTimeout(autoWrite, speed);
+        }
+    }
+
+    autoWrite();
+
+</script>
+<script>
+    const sidemenu = document.getElementById('menu');
+
+    function openmenu() {
+        sidemenu.style.right = 0;
+    }
+    function closemenu() {
+        sidemenu.style.right = "-100px";
+    }
+</script>
+
+</html>
